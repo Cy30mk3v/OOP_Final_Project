@@ -5,6 +5,7 @@ Screen::Screen(int x, int y, int w, int h)
 	, _colors(NULL)
 	, _chars(NULL)
 	, _showbor(false)
+	, _isFocused(true)
 {
 	_colors = new uint8*[_rect.h];
 	_chars = new char*[_rect.h];
@@ -31,6 +32,10 @@ Screen::~Screen() {
 	}
 	delete[] _colors;
 	delete[] _chars;
+}
+
+void Screen::focus(bool focus) {
+	_isFocused = focus;
 }
 
 void Screen::showBorder(bool show) {
@@ -65,7 +70,6 @@ void Screen::present() {
 				setBgColor(_colors[i][j]);
 				last = _colors[i][j];
 			}
-
 			fputc(_chars[i][j], stdout);
 		}
 	}
@@ -90,6 +94,9 @@ void Screen::write(int x, int y, std::string msg, bool center) {
 }
 
 bool Screen::isLegal(int x, int y) {
+	if (_isFocused == false)
+		return false; 
+
 	if (x >= _rect.w - _showbor)
 		return false;
 

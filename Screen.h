@@ -8,6 +8,7 @@ private:
 	char**	_chars;
 	Rect	_rect;
 	bool	_showbor;
+	bool	_isFocused;
 public:
 	Screen(Rect& rect);
 	Screen(int x, int y, int w, int h);
@@ -19,6 +20,7 @@ public:
 	int getH() { return _rect.h; }
 
 	void showBorder(bool show = true);
+	void focus(bool focus = true);
 	void present();
 	void clear();
 	void write(int x, int y, std::string msg, bool center = false);
