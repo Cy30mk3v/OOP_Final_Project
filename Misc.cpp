@@ -31,8 +31,7 @@ void setFgColor(WORD color)
 }
 void setBgColor(WORD color)
 {
-	HANDLE hConsoleOutput;
-	hConsoleOutput = GetStdHandle(STD_OUTPUT_HANDLE);
+	HANDLE hConsoleOutput = GetStdHandle(STD_OUTPUT_HANDLE);
 
 	CONSOLE_SCREEN_BUFFER_INFO screen_buffer_info;
 	GetConsoleScreenBufferInfo(hConsoleOutput, &screen_buffer_info);
