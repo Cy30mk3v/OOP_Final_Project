@@ -2,6 +2,12 @@
 
 #define DELAY 50
 
+/*
+ 01
+0 #
+1##
+2 #
+*/
 int main() {
 	//for example:
 
@@ -16,9 +22,10 @@ int main() {
 		startTick = GetTickCount();
 		++x;
 		mainScreen.clear();
-		for (int i = 1; i < 28; ++i)
-			for (int j = 0; j < 120; ++j)
-				mainScreen.replaceC(j, i, 219);
+		mainScreen.replaceC(5, 5, 219);
+		mainScreen.replaceC(6, 5, 219);
+		mainScreen.replaceC(6, 6, 219);
+		mainScreen.replaceC(6, 4, 219);
 
 		mainScreen.write(60, 28, std::to_string(ticks), false);
 		mainScreen.present();

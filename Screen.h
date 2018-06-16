@@ -25,7 +25,7 @@ public:
 	void clear();
 	void write(int x, int y, std::string msg, bool center = false);
 	bool isLegal(int x, int y);
-	void replaceC(int x, int y, char c);
-	void replace(int x, int y, uint8 color);
+	void replaceChar(int x, int y, char c);
+	void replaceBgColor(int x, int y, uint8 color);
 };
 

@@ -90,7 +90,7 @@ void Screen::write(int x, int y, std::string msg, bool center) {
 	x = x - (center ? msg.length() / 2 : 0);
 
 	for (int i = 0; i < msg.length(); ++i)
-		replaceC(x + i, y, msg[i]);
+		replaceChar(x + i, y, msg[i]);
 }
 
 bool Screen::isLegal(int x, int y) {
@@ -109,14 +109,14 @@ bool Screen::isLegal(int x, int y) {
 	return true;
 }
 
-void Screen::replaceC(int x, int y, char c) {
+void Screen::replaceChar(int x, int y, char c) {
 	if (isLegal(x, y) == false)
 		return;
 
 	_chars[y][x] = c;
 }
 
-void Screen::replace(int x, int y, uint8 color) {
+void Screen::replaceBgColor(int x, int y, uint8 color) {
 	if (isLegal(x, y) == false)
 		return;
 
