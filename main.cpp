@@ -16,13 +16,12 @@ int main() {
 
 	mainScreen.showBorder();
 	
-	Texture t;
-
 	DWORD startTick = 0;
 	DWORD ticks = 0;
 	int x = 1;
 
 	// Texture
+	Texture t;
 	int i = 0, j = i + 15, k = j + 15, m = k + 15;
 	//
 
@@ -32,10 +31,10 @@ int main() {
 		mainScreen.clear();
 
 		// Texture
-		t.createObject(mainScreen, m);
-		t.createObject(mainScreen, k);
-		t.createObject(mainScreen, j);
-		t.createObject(mainScreen, i);
+		t.createObject(&mainScreen, m);
+		t.createObject(&mainScreen, k);
+		t.createObject(&mainScreen, j);
+		t.createObject(&mainScreen, i);
 			
 		//  
 
