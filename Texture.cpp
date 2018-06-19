@@ -3,11 +3,22 @@
 
 Texture::Texture()
 {
+	m_x = m_y = m_color = NULL;
 }
-
-
+/*Texture::Texture(const Screen* scr)
+{
+	this->m_screen = scr;
+}*/
 Texture::~Texture()
 {
+	delete[]this->m_x;
+	delete[]this->m_y;
+	delete[]this->m_color;
+	//delete[]this->m_screen;
+}
+
+bool Texture::load(string link) {
+	
 }
 
 void Texture::createObject(Screen* scr, int& i) {
