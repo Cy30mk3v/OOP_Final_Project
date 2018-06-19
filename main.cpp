@@ -32,10 +32,10 @@ int main() {
 		mainScreen.clear();
 
 		// Texture
-		t.createObject(mainScreen, m);
-		t.createObject(mainScreen, k);
-		t.createObject(mainScreen, j);
-		t.createObject(mainScreen, i);
+		t.createObject(&mainScreen, m);
+		t.createObject(&mainScreen, k);
+		t.createObject(&mainScreen, j);
+		t.createObject(&mainScreen, i);
 			
 		//  
 

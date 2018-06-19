@@ -10,7 +10,7 @@ Texture::~Texture()
 {
 }
 
-Screen* Texture::createObject(Screen* scr, int& i) {
+void Texture::createObject(Screen* scr, int& i) {
 	// Object di chuyen theo truc Ox voi delta x = 1, co the thay doi neu muon
 	scr->replaceChar(5 + i, 6, 219);
 	scr->replaceChar(5 + i, 7, 219);
@@ -32,10 +32,10 @@ Screen* Texture::createObject(Screen* scr, int& i) {
 	if (i == 110)
 		i = 0;
 
-	return scr;
+	//return scr;
 }
 
-bool Texture::checkAccident() {
+/*bool Texture::checkAccident() {
 
 	return 1;
-}
+}*/
