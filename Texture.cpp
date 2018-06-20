@@ -5,11 +5,14 @@ Texture::Texture(Screen* scr, string fileName) :m_screen(scr) {
 }
 Texture::~Texture() {
 	this->m_point.clear();
-	for (int i = 0; i < m_countRowsColor; ++i)
+	/*for (int i = 0; i < m_countRowsColor; ++i)
 		delete[] this->m_color[i];
-	delete[] this->m_color;
+	delete[] this->m_color;*/
 
-	delete[]this->m_screen;
+	// * * * * * * * * * * * * * * * * * * *
+	// nguoi ta con sai delete chi vay 3 :v
+	// * * * * * * * * * * * * * * * * * * * 
+	// delete[]this->m_screen;
 }
 
 bool Texture::load(string link) {
@@ -22,7 +25,6 @@ bool Texture::load(string link) {
 	
 	while (!f.eof())
 	{
-		f >> this->m_countPoint;
 		f >> x.x;
 		f >> x.y;
 		this->m_point.push_back(x);

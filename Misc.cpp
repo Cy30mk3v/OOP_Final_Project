@@ -7,11 +7,17 @@ void fixWindowConsole() {
 	SetWindowLong(wind, GWL_STYLE, style);
 }
 
+void gotoxy(int x, int y)
+{
+	static HANDLE h = NULL;
+	if (!h)
+		h = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD c = { x, y };
+	SetConsoleCursorPosition(h, c);
+}
+
 void moveCursor(int x, int y) {
-	COORD coord;
-	coord.X = x;
-	coord.Y = y;
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+	gotoxy(x, y);
 }
 
 void setFgColor(WORD color)

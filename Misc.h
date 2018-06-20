@@ -86,3 +86,5 @@ void setFgColor(WORD color);
 
 // origin(0, 0)
 void moveCursor(int x, int y);
+
+void gotoxy(int x, int y);

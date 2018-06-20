@@ -10,8 +10,8 @@ class Texture
 private:
 	Screen* m_screen;
 	vector<Point> m_point;
-	uint8** m_color;
-	int m_countPoint, m_countColsColor, m_countRowsColor;
+	/*uint8** m_color;
+	int m_countPoint, m_countColsColor, m_countRowsColor;*/
 public:
 	Texture(Screen* scr, string fileName);
 	~Texture();
