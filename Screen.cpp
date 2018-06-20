@@ -94,9 +94,6 @@ void Screen::write(int x, int y, std::string msg, bool center) {
 }
 
 bool Screen::isLegal(int x, int y) {
-	if (_isFocused == false)
-		return false; 
-
 	if (x >= _rect.w - _showbor)
 		return false;
 
@@ -114,6 +111,10 @@ void Screen::replaceChar(int x, int y, char c) {
 		return;
 
 	_chars[y][x] = c;
+}
+
+void Screen::replaceChar(Point p, char c) {
+	replaceChar(p.x, p.y, c);
 }
 
 void Screen::replaceBgColor(int x, int y, uint8 color) {

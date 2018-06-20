@@ -2,7 +2,7 @@
 
 Texture::Texture()
 {
-	m_x = m_y = m_color = NULL;
+	
 }
 Texture::Texture(Screen* scr)
 {
@@ -17,6 +17,34 @@ Texture::~Texture()
 
 	delete[]this->m_screen;
 }
+
+//bool Texture::load(string link) {
+//	ifstream in(link);
+//	if (in.is_open() == false)
+//		return false;
+//
+//	Point x;
+//
+//	while (!in.eof()) {
+//		in >> x.x >> x.y;
+//		m_point.push_back(x);
+//	}
+//
+//	return true;
+//}
+//
+//void Texture::draw(int x, int y) {
+//	for (int i = 0; i < m_point.size(); ++i)
+//		m_screen->replaceChar(m_point[i].x + x, m_point[i].y + y, 219);
+//}
+//
+//void Texture::draw(Point p) {
+//	draw(p.x, p.y);
+//}
+//
+//void Texture::draw() {
+//	draw(0, 0);
+//}
 
 bool Texture::load(string link) {
 	fstream f;
@@ -50,6 +78,7 @@ bool Texture::load(string link) {
 	return true;
 }
 
+// @TODO: fix lai cai nay ho t cai
 void Texture::createObject(Screen* scr, int& i) {
 	// Object di chuyen theo truc Ox voi delta x = 1, co the thay doi neu muon
 	scr->replaceChar(5 + i, 6, 219);

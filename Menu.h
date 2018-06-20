@@ -1,25 +1,7 @@
 ﻿#pragma once
 #define _CRT_SECURE_NO_WARNINGS 0
-#include <stdio.h>
-#include <iostream>
-#include <conio.h>
-#include <fstream>
-#include <string>
-#include <math.h>
-#include <stdlib.h>
-#include <Windows.h>
-#include "Misc.h"
 
 using namespace std;
-
-
-void resizeConsole(int width, int height)
-{
-	HWND console = GetConsoleWindow();
-	RECT r;
-	GetWindowRect(console, &r);
-	MoveWindow(console, r.left, r.top, width, height, TRUE);
-}
 
 /*void setBgColor(WORD color)
 {
@@ -197,6 +179,9 @@ int DrawMenu()
 
 	re = ReadMenu();
 	gotoxy(35, 23);
+
+	system("cls");
+	system("color 07");
 
 	return re;
 }

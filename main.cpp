@@ -14,7 +14,7 @@
 1##
 2 #
 */
-/*int main() {
+int main() {
 	//for example:
 
 	Screen mainScreen(0, 0, 120, 30);
@@ -26,7 +26,7 @@
 	int x = 1;
 
 	// Texture
-	Texture t;
+	Texture t(&mainScreen);
 	int i = 0, j = i + 15, k = j + 15, m = k + 15;
 	//
 
@@ -36,10 +36,13 @@
 		mainScreen.clear();
 
 		// Texture
-		t.createObject(&mainScreen, m);
+		/*t.createObject(&mainScreen, m);
 		t.createObject(&mainScreen, k);
 		t.createObject(&mainScreen, j);
-		t.createObject(&mainScreen, i);
+		t.createObject(&mainScreen, i);*/
+
+		/*t.draw();
+		t.draw(5, 5);*/
 			
 		//  
 
@@ -54,15 +57,13 @@
 		Sleep(DELAY - ticks);
 	}
 	return 0;
-}*/
-
-void main()
-{
-	int a = DrawMenu();
-	system("cls");
-	system("color 07");
-
-	cout << a << endl;
-
-	_getch();
 }
+
+//void main()
+//{
+//	int a = DrawMenu();
+//
+//	cout << a << endl;
+//
+//	_getch();
+//}

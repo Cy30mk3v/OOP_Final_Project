@@ -24,6 +24,9 @@
     <ClCompile Include="Screen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Misc.h">
@@ -32,5 +35,16 @@
     <ClInclude Include="Screen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="wtf.txt">
+      <Filter>Header Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

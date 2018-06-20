@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 #include <list>
+#include <stdio.h>
 #include <ctype.h>
 #include <math.h>
 #include <conio.h>
@@ -66,6 +67,8 @@ struct Rect {
 		return isInside(p.x, p.y);
 	}
 };
+
+void resizeConsole(int width, int height);
 
 // default console size 128x32
 void fixWindowConsole();

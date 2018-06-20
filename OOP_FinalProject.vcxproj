@@ -118,10 +118,16 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Misc.cpp" />
     <ClCompile Include="Screen.cpp" />
+    <ClCompile Include="Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Misc.h" />
     <ClInclude Include="Screen.h" />
+    <ClInclude Include="Texture.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="wtf.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
