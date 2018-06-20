@@ -25,8 +25,8 @@ int main() {
 	DWORD ticks = 0;
 	int x = 1;
 
-	// Texture
-	Texture t(&mainScreen);
+	// Texture 
+	Texture t(&mainScreen, "test.txt");
 	int i = 0, j = i + 15, k = j + 15, m = k + 15;
 	//
 
@@ -36,10 +36,10 @@ int main() {
 		mainScreen.clear();
 
 		// Texture
-		/*t.createObject(&mainScreen, m);
-		t.createObject(&mainScreen, k);
-		t.createObject(&mainScreen, j);
-		t.createObject(&mainScreen, i);*/
+		/*t.makeObjectRunForeverUntilPlayerLoseOrWin(&mainScreen, m);
+		t.makeObjectRunForeverUntilPlayerLoseOrWin(&mainScreen, k);
+		t.makeObjectRunForeverUntilPlayerLoseOrWin(&mainScreen, j);
+		t.makeObjectRunForeverUntilPlayerLoseOrWin(&mainScreen, i);*/
 
 		/*t.draw();
 		t.draw(5, 5);*/

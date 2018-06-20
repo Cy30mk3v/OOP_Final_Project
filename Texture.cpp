@@ -1,15 +1,9 @@
 #include "Texture.h"
 
-Texture::Texture()
-{
-	
+Texture::Texture(Screen* scr, string fileName) :m_screen(scr) {
+	load(fileName); 
 }
-Texture::Texture(Screen* scr)
-{
-	this->m_screen = scr;
-}
-Texture::~Texture()
-{
+Texture::~Texture() {
 	this->m_point.clear();
 	for (int i = 0; i < m_countRowsColor; ++i)
 		delete[] this->m_color[i];
@@ -18,36 +12,8 @@ Texture::~Texture()
 	delete[]this->m_screen;
 }
 
-//bool Texture::load(string link) {
-//	ifstream in(link);
-//	if (in.is_open() == false)
-//		return false;
-//
-//	Point x;
-//
-//	while (!in.eof()) {
-//		in >> x.x >> x.y;
-//		m_point.push_back(x);
-//	}
-//
-//	return true;
-//}
-//
-//void Texture::draw(int x, int y) {
-//	for (int i = 0; i < m_point.size(); ++i)
-//		m_screen->replaceChar(m_point[i].x + x, m_point[i].y + y, 219);
-//}
-//
-//void Texture::draw(Point p) {
-//	draw(p.x, p.y);
-//}
-//
-//void Texture::draw() {
-//	draw(0, 0);
-//}
-
 bool Texture::load(string link) {
-	fstream f;
+	ifstream f;
 	f.open(link, ios::in);
 	if (f.fail())
 		return false;
@@ -57,29 +23,15 @@ bool Texture::load(string link) {
 	while (!f.eof())
 	{
 		f >> this->m_countPoint;
-		for (int i = 0; i < this->m_countPoint; i++)
-		{
-			f >> x.x;
-			f >> x.y;
-			this->m_point.push_back(x);
-		}
-		
-		f >> this->m_countRowsColor;
-		f >> this->m_countColsColor;
-		for (int i = 0; i < this->m_countRowsColor; i++)
-		{
-			for (int j = 0; j < this->m_countColsColor; j++)
-			{
-				f >> this->m_color[i][j];
-			}
-		}
-
+		f >> x.x;
+		f >> x.y;
+		this->m_point.push_back(x);
 	}
 	return true;
 }
 
 // @TODO: fix lai cai nay ho t cai
-void Texture::createObject(Screen* scr, int& i) {
+void Texture::makeObjectRunForeverUntilPlayerLoseOrWin(Screen* scr, int& i) {
 	// Object di chuyen theo truc Ox voi delta x = 1, co the thay doi neu muon
 	scr->replaceChar(5 + i, 6, 219);
 	scr->replaceChar(5 + i, 7, 219);
@@ -102,4 +54,18 @@ void Texture::createObject(Screen* scr, int& i) {
 		i = 0;
 
 	//return scr;
+}
+
+
+void Texture::draw(int x, int y) {
+	for (int i = 0; i < m_point.size(); ++i)
+		m_screen->replaceChar(m_point[i].x + x, m_point[i].y + y, 219);
+}
+
+void Texture::draw(Point p) {
+	draw(p.x, p.y);
+}
+
+void Texture::draw() {
+	draw(0, 0);
 }
