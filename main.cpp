@@ -1,15 +1,20 @@
 ﻿#include "Screen.h"
 #include "Texture.h"
+#include "Menu.h"
 
 #define DELAY 50
 
+//roi ok mai se viet cai menu trong project nay
+//may cai nay la example nen mai comment no lai het roi viet cung duoc
+//nhung ma may' cai' ham` mai viet' nho' comment cach' dung` de t con biet
+//viet xong thi 
 /*
  01
 0 #
 1##
 2 #
 */
-int main() {
+/*int main() {
 	//for example:
 
 	Screen mainScreen(0, 0, 120, 30);
@@ -49,4 +54,15 @@ int main() {
 		Sleep(DELAY - ticks);
 	}
 	return 0;
+}*/
+
+void main()
+{
+	int a = DrawMenu();
+	system("cls");
+	system("color 07");
+
+	cout << a << endl;
+
+	_getch();
 }

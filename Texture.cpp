@@ -4,20 +4,50 @@ Texture::Texture()
 {
 	m_x = m_y = m_color = NULL;
 }
-/*Texture::Texture(const Screen* scr)
+Texture::Texture(Screen* scr)
 {
 	this->m_screen = scr;
-}*/
+}
 Texture::~Texture()
 {
-	delete[]this->m_x;
-	delete[]this->m_y;
-	delete[]this->m_color;
-	//delete[]this->m_screen;
+	this->m_point.clear();
+	for (int i = 0; i < m_countRowsColor; ++i)
+		delete[] this->m_color[i];
+	delete[] this->m_color;
+
+	delete[]this->m_screen;
 }
 
 bool Texture::load(string link) {
+	fstream f;
+	f.open(link, ios::in);
+	if (f.fail())
+		return false;
+	int number;
+	Point x;
 	
+	while (!f.eof())
+	{
+		f >> this->m_countPoint;
+		for (int i = 0; i < this->m_countPoint; i++)
+		{
+			f >> x.x;
+			f >> x.y;
+			this->m_point.push_back(x);
+		}
+		
+		f >> this->m_countRowsColor;
+		f >> this->m_countColsColor;
+		for (int i = 0; i < this->m_countRowsColor; i++)
+		{
+			for (int j = 0; j < this->m_countColsColor; j++)
+			{
+				f >> this->m_color[i][j];
+			}
+		}
+
+	}
+	return true;
 }
 
 void Texture::createObject(Screen* scr, int& i) {

@@ -9,14 +9,16 @@ using namespace std;
 class Texture
 {
 private:
-	//Screen* m_screen;
-	float *m_x, *m_y, *m_color;
-	int m_countX, m_countY, m_countColor;
+	Screen* m_screen;
+	vector<Point> m_point;
+	uint8** m_color;
+	int m_countPoint, m_countColsColor, m_countRowsColor;
 public:
 	Texture::Texture();
-	Texture(const Screen* scr);
+	Texture(Screen* scr);
 	~Texture();
 
+	// so luong Point, cac Point roi toi matrix color
 	bool load(string a);
 	void createObject(Screen* scr, int& i);
 };
