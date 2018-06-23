@@ -6,6 +6,8 @@ Demo::Demo()
 {
 	_mainScr = new Screen(0, 0, 80, 24);
 	_subScr = new Screen(81, 0, 30, 24);
+	
+	// Tạo texture mới nhận màn hình hiển thị là _mainScr, file load vào là wtf.txt
 	_texture = new Texture(_mainScr, "wtf.txt");
 
 	_mainScr->showBorder();
@@ -33,8 +35,9 @@ void Demo::run() {
 	while (1) {
 		_mainScr->clear();
 		_subScr->clear();
-
+		
 		for (int i = 0; i < 5; ++i)
+			// vẽ ra màn hình texture được load từ wtf.txt, vẽ ở vị trí cx = (i * 8) + x, cy = 5
 			_texture->draw((i * 8) + x, 5);
 
 		++x;
