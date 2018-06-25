@@ -23,5 +23,12 @@ public:
 	void draw();
 	void draw(int x, int y);
 	void draw(Point p);
+	
+	Point getPointAtIndex(int pos) {
+		return this->m_point[pos];
+	}
+	void setPointAtIndex(int pos, Point p) {
+		this->m_point[pos] = p;
+	}
 };
 
